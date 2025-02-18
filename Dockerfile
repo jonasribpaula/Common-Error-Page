@@ -4,7 +4,7 @@ FROM nginx:alpine
 RUN apk add --no-cache gettext
 
 # Copia o arquivo HTML para um template
-COPY index.html /usr/share/nginx/html/index.template.html
+COPY index.template.html /usr/share/nginx/html/index.template.html
 
 # Copia o script de entrypoint
 COPY docker-entrypoint.sh /docker-entrypoint.sh
