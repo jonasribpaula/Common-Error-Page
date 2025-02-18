@@ -1,0 +1,38 @@
+name: Docker Build and Push to DockerHub
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout
+
+      - name: Set IMAGE_TAG environment variable
+        run: |          
+          # Define as variáveis de imagem com o registro GHCR
+          echo "IMAGE_TAG=xonashenrique/common-error-page:${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+          echo "IMAGE_TAG_LATEST=xonashenrique/common-error-page:latest" >> $GITHUB_ENV
+
+      - name: Log in to DockerHub Container Registry
+        uses: docker/login-action
+        with:
+          username: xonashenrique
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build Docker image
+        run: docker build -f Dockerfile -t $IMAGE_TAG .
+
+      - name: Push Docker image
+        run: |
+          docker push $IMAGE_TAG
+          docker tag $IMAGE_TAG $IMAGE_TAG_LATEST
+          docker push $IMAGE_TAG_LATEST
+
+      - name: Logout from DockerHub Container Registry
+        run: docker logout
