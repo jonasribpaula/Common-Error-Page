@@ -6,13 +6,14 @@
   Created by Jonas Henrique R Paula on 2025-05-13. See more at https://github.com/jonasribpaula/Common-Error-Page
   Feel free to modify the content and styles as needed.
 -->
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Service Temporarily Unavailable</title>
+  <title>Serviço Temporariamente Indisponível</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="alternate" hreflang="en" href="../en/index.html" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap');
 
@@ -826,11 +827,12 @@
     <div class="w-full md:w-1/2 p-6 md:p-8 flex flex-col justify-center">
       <div class="text-center md:text-left">
         <h1 class="text-4xl md:text-5xl font-bold text-indigo-600 mb-2">503</h1>
-        <h2 class="text-xl md:text-2xl font-medium text-gray-700 mb-4 md:mb-6">Service Temporarily Unavailable</h2>
-        <p class="text-gray-600 mb-6 md:mb-8">We are performing maintenance to improve your experience. We'll be back soon with amazing updates for you!</p>
+        <h2 class="text-xl md:text-2xl font-medium text-gray-700 mb-4 md:mb-6">Serviço Temporariamente Indisponível</h2>
+        <p class="text-gray-600 mb-6 md:mb-8">Estamos realizando uma manutenção para melhorar sua experiência. Em breve
+          estaremos de volta com novidades incríveis para você!</p>
 
         <div class="bg-white rounded-2xl shadow-lg p-5 md:p-6 mb-6 md:mb-8">
-          <p class="text-gray-700 mb-3 md:mb-4 text-lg font-medium">We'll be back soon:</p>
+          <p class="text-gray-700 mb-3 md:mb-4 text-lg font-medium">Voltaremos em breve:</p>
 
           <div class="flex flex-col items-center mb-4">
             <div class="countdown-container mb-2"
@@ -843,10 +845,11 @@
               <div id="timer"
                 style="position: absolute; font-size: 2rem; font-weight: bold; color: #8b5cf6; line-height: 1;">16</div>
             </div>
-            <p class="text-sm text-gray-500">seconds</p>
+            <p class="text-sm text-gray-500">segundos</p>
           </div>
 
-          <p class="text-center text-gray-600 text-sm mb-4">The page will reload automatically when the counter reaches zero.</p>
+          <p class="text-center text-gray-600 text-sm mb-4">A página será recarregada automaticamente quando o contador
+            chegar a zero.</p>
 
           <button id="reloadBtn"
             class="reload-btn bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-medium py-3 px-6 rounded-xl shadow-md hover:shadow-lg flex items-center justify-center w-full">
@@ -856,7 +859,7 @@
                 d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15">
               </path>
             </svg>
-            Reload Now
+            Recarregar Agora
           </button>
         </div>
       </div>
